@@ -1,0 +1,18 @@
+<section class="documents">
+    <div class="container">
+        <div class="documentsInfo">
+            <h2>Documents</h2>
+            <div class="allDocs">
+                <div class="info" *ngFor="let docs of documents">
+                    <div>
+                        <p>{{docs.name}}</p>
+                        <span [style.color]="docs.color"><img src="{{docs.icon}}"> {{docs.title}}</span>
+                    </div>
+                    <img [src]='docs.image' alt="">
+                </div>
+                
+            </div>
+            <hr>
+        </div>
+    </div>
+</section>

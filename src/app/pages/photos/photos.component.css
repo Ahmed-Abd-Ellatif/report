@@ -1,0 +1,221 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    padding: 100px;
+}
+.container{
+    width: 1180px;
+    margin: auto;
+    background-color: #fff;
+}
+.photoInfo{
+    padding: 0 100px 60px;
+}
+.photoInfo h2{
+    font-size: 32px;
+    margin-bottom: 32px;
+    font-weight: 500;
+}
+.photoInfo hr{
+    border: 1px solid #e2e2e2;
+    background-color: #e2e2e2;
+    margin-top: 60px ;
+}
+
+
+.img-container{
+    width: 980px;
+    height: auto;
+    position: relative;
+}
+.img-container img{
+    width: 100%;
+    height: 100%;
+}
+.img-prev{
+    width: 100%;
+    margin-top: 8px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+.img-slide{
+    min-width: 210px;
+    height: 120px;
+    margin: 0 1px;
+    cursor: pointer;
+}
+.active{
+    border: 2px solid #0078d4;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 8px;
+  }
+  
+  /* Track */
+   ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px transparent; 
+  } 
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #0067d4; 
+    border-radius: 10px;
+    cursor: pointer;
+  } 
+
+
+
+    /* OVERLAY */
+    .overlay{
+        background-color:rgb(68, 66, 66) ;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1001;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 0;
+        
+      }
+      /* .overlay{
+        display: none;
+      } */
+    .overlay .popup{
+        width: 1160px;
+        height: calc(100vh - 100px);
+        background-color: #fff;
+        padding: 70px;
+        border-radius: 10px;
+        box-shadow: 0  0 10px 0 rgba(0, 0, 0, 16%);
+        overflow: scroll;
+    }
+    .overlay .popup .images{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .overlay .popup p{
+        width: 52px;
+        height: 52px;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        position: fixed;
+        top: 30px;
+        left: 42px;
+        cursor: pointer;
+    
+    }
+    .overlay .popup p img{
+        min-width: 20px;
+        height: 20px;
+    }
+    .overlay .popup .images img{
+        min-width:486px;
+        height: 287px;
+        margin: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+    
+    }
+    .img-container span{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 52px;
+        height: 52px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1000;
+    }
+     .img-container span img{
+        width: 20px;
+        height: 20px;
+    }
+/* Media Quary */
+  @media (max-width:1200px){
+    .photos{
+        padding: 0 10px;
+    }
+    .container{
+        width: 100%;
+    }
+    .img-container{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-width:500px){
+    
+    
+    .photoInfo{
+        padding: 0 20px 30px;
+    }
+    .photoInfo hr{
+        margin-top: 30px ;
+    }
+    .photoInfo h2{
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    
+    .img-container span{
+        width: 28px;
+        height: 28px;
+    }
+    .img-container span img{
+        width: 10px;
+        height: 10px;
+    }
+    .img-prev{
+        padding-bottom: 12px;
+    }
+    .img-slide {
+        min-width: 120px;
+        height: 80px;
+    }
+   
+
+    .overlay.active{
+        padding: 100px 10px;
+      }
+     
+    .overlay .popup{
+        width: 100%;
+        padding: 40px;
+    }
+    .overlay .popup p{
+        width: 24px;
+        height: 24px;
+        top: 16px;
+        left: 16px;
+    
+    }
+    .overlay .popup p img{
+        min-width: 10px;
+        height: 10px;
+    }
+    .overlay .popup .images img{
+        min-width:295px;
+        height: 150px;
+    } 
+}  
