@@ -1,0 +1,172 @@
+.container{
+    width: 1180px;
+    margin: auto;
+    background-color: #fff;
+}
+.damagesInfo{
+    padding: 0 100px 60px;
+}
+.title{
+    
+}
+.title h3{
+    font-size: 32px;
+    font-weight: 500px;
+    margin-bottom: 12px;
+}
+.title hr{
+    background-color: #e2e2e2;
+    border: 1px solid #e2e2e2;
+    margin-bottom: 40px;
+}
+.subTitle h4{
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+.subTitle hr{
+    background-color: #e2e2e2;
+    border: .5px solid #e2e2e2;
+    margin-bottom: 20px;
+}
+
+.images{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.imgInfo{
+    width: 460px;
+    height: auto;
+    position: relative;
+}
+.imgInfo img{
+    width: 100%;
+    height: 100%;
+}
+.imgInfo:first-child{
+    margin-right: 60px;
+}
+.details{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 28px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #000 100%);
+}
+.icon{
+    display: flex;
+    align-items: center;
+}
+.icon img{
+    width: 25px;
+    height: 25px;
+    margin-right: 12px;
+
+}
+.icon p , .hand a{ 
+    font-size: 24px;
+    color: #fff;
+    font-weight: 500;
+}
+.damagesInfo .hr{
+    background-color: #e2e2e2;
+    border: 1px solid #e2e2e2;
+}
+@media (max-width:1200px){
+    .damages{
+        padding: 0 10px;
+    }
+    .container{
+        width: 100%;
+    }
+}
+@media (max-width:1000px){
+    .icon img{
+        width: 18px;
+        height: 18px;
+    }
+    .icon p , .hand a{ 
+        font-size: 18px;
+    }
+}
+@media (max-width:850px){
+    .icon img{
+        width: 11px;
+        height: 11px;
+    }
+    .icon p , .hand a{ 
+        font-size: 11px;
+    }
+}
+@media (max-width:700px){
+    .imgInfo{
+        width: auto;
+        height: auto;
+    }
+    .imgInfo:first-child{
+        margin-right: 20px;
+    }
+    .details{
+        padding: 0 10px 6px;
+    }
+    .icon img{
+        width: 10px;
+        height: 10px;
+        margin-right: 4px;
+    
+    }
+    .icon p , .hand a{ 
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width:500px){
+    
+    .damagesInfo{
+        padding: 0 20px 30px;
+    }
+    .title{
+        
+    }
+    .title h3{
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+    .title hr{
+        margin-bottom: 20px;
+    }
+    .subTitle h4{
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+    .subTitle hr{
+        background-color: #e2e2e2;
+        border: .5px solid #e2e2e2;
+        margin-bottom: 16px;
+    }
+    
+    .imgInfo{
+        width: auto;
+        height: auto;
+    }
+    .imgInfo:first-child{
+        margin-right: 20px;
+    }
+    .details{
+        padding: 0 10px 6px;
+    }
+    .icon img{
+        width: 10px;
+        height: 10px;
+        margin-right: 4px;
+    
+    }
+    .icon p , .hand a{ 
+        font-size: 10px;
+    }
+}

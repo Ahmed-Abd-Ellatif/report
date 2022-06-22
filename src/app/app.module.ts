@@ -12,6 +12,9 @@ import { NotesComponent } from './pages/notes/notes.component';
 import { SignatureComponent } from './pages/signature/signature.component';
 import { PhotosComponent } from './pages/photos/photos.component';
 import { DemoDirective } from './directive/demo.directive';
+import { DamagesComponent } from './pages/damages/damages.component';
+import { DamagesOverviewComponent } from './pages/damages-overview/damages-overview.component';
+import { IsActiveDirective } from './directive/is-active.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { DemoDirective } from './directive/demo.directive';
     NotesComponent,
     SignatureComponent,
     PhotosComponent,
-    DemoDirective
+    DemoDirective,
+    DamagesComponent,
+    DamagesOverviewComponent,
+    IsActiveDirective
   ],
   imports: [
     BrowserModule,

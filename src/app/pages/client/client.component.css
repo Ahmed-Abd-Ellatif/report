@@ -2,7 +2,7 @@
     width: 1180px;
     margin: auto;
     background-color: #fff;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 16%);
+    /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 16%); */
 }
 .clientInfo{
     padding: 60px 100px ;
