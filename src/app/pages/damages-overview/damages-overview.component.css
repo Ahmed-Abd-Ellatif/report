@@ -84,10 +84,10 @@ h2{
 
 /* ========================Images======================== */
 .images{
-    background-color: red;
+    /* background-color: red; */
 }
 .images > div{
-    background-color: green;
+    /* background-color: green; */
     position: relative;
    
     
@@ -132,14 +132,7 @@ img{
     width: 315px;
     padding: 13px;
 }
-.dropdown-menu.show{
-    z-index: 9999;
-}
-.dropdown-item {
-    padding: 0;
-    margin: 0;
-    z-index: 1000;
-}
+
 .dropdown-item img{
     margin-bottom: 14px;
 }
@@ -206,17 +199,13 @@ img{
     margin-top: -40px;
     order: -5;
     transform: rotate(-90deg);
-    /* z-index: 1004; */
 }
 .left{
     order: -4;
-    /* z-index: 1003; */
-
 }
 .rear{
     order: -3;
     transform: rotate(90deg);
-    /* z-index: 1002; */
 }
 .rear .rearImg .divRed,
 .rear .rearImg .divBlue{
@@ -226,7 +215,6 @@ img{
     margin-bottom: 40px;
     order: -2;
     transform: rotate(180deg);
-    /* z-index: 1001; */
 }
 .right .rightImg .divRed,
 .right .rightImg .divBlue{
@@ -235,7 +223,6 @@ img{
 .top{
     margin: 150px 0;
     transform: rotate(90deg);
-    /* z-index: 1000; */
 }
 
 .top .topImg .divRed,
@@ -260,8 +247,34 @@ img{
         font-size: 20px;
         margin-bottom: 20px;
     }
-    .left img,.right img,.top img,.rear img,.front img{
-        max-width: 315px;
+    .left img{
+        width: 315px;
+        height: 97px;
+    }
+    .right img{
+        width: 315px;
+        height: 97px;
+    }
+    .top img{
+        height: 315px;
+        width: 688px;
+    }
+    .rear img{
+        width: 250px;
+    }
+    .front img{
+        width: 250px;
         height: auto;
+    }
+
+    .spanRed{
+        width: 16px;
+        height: 16px;
+        font-size: 8px;
+    }
+    .spanGray{
+        width: 16px;
+        height: 16px;
+        font-size: 8px;
     }
 }
