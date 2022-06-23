@@ -83,37 +83,36 @@ h2{
 }
 
 /* ========================Images======================== */
-/* .images{
+.images{
     background-color: red;
 }
 .images > div{
     background-color: green;
-} */
+    position: relative;
+   
+    
+}
 
 .right,.left{
     max-width:513px;
     max-height: auto;
     margin: auto;
-    position: relative;
 }
 .front{
     max-width: 197px;
     max-height: auto;
     display: inline-block;
-    position: relative;
 }
 .top{
     max-width: 514px;
     height: auto;
     display: inline-block;
-    margin: 80px 40px;
-    position: relative;
+    margin: 80px 0px;
 }
 .rear{
     max-width: 182px;
     max-height: auto;
     display: inline-block;
-    position: relative;
 }
 
 img{
@@ -122,13 +121,28 @@ img{
 }
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>> */
-span p{
-    display: none;
+.divRed ,.divBlue{
+    position: absolute;
+    
 }
-
-
-
-
+.divRed button ,.divBlue button{
+    all: unset;
+}
+.dropdown-menu{
+    width: 315px;
+    padding: 13px;
+}
+.dropdown-menu.show{
+    z-index: 9999;
+}
+.dropdown-item {
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+}
+.dropdown-item img{
+    margin-bottom: 14px;
+}
 .spanRed{
     width: 24px;
     height: 24px;
@@ -137,16 +151,17 @@ span p{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
     background: #faebeb;
     cursor: pointer;
     color: #D13438;
     font-size: 12px;
 }
-.spanRed.active{
+.divRed.show .spanRed{
     background-color: #D13438;
     color: #fff;
 }
+
+/* ****************************** */
 .spanGray{
     width: 24px;
     height: 24px;
@@ -155,30 +170,16 @@ span p{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
     background: #c1c1c1;
     cursor: pointer;
     color: #fff;
     font-size: 12px;
 }
-.spanGray.active{
+.divBlue.show .spanGray{
     background-color: #0078d4;
     border: 1px solid #0078d4;
     color: #fff;
 }
-
-
-/* .rightImg{
-    position: relative;
-}
-.right{
-    transform: rotate(90deg);
-}
-.rightImg span{
-    position: absolute;
-    top: 26px;
-    left: 96px;
-} */
 /* ================Media Quary=================== */
 @media(max-width:1200px){
     .damagesOverview{
@@ -196,32 +197,57 @@ span p{
     flex-direction: column;
     
 }
-.front{
-    /* margin-bottom: 40px; */
+
+.front .frontImg .divRed,
+.front .frontImg .divBlue{
+    transform: rotate(90deg);
+}
+.front {
     margin-top: -40px;
     order: -5;
-    transform: rotate(270deg);
+    transform: rotate(-90deg);
+    /* z-index: 1004; */
 }
 .left{
     order: -4;
+    /* z-index: 1003; */
 
 }
 .rear{
     order: -3;
     transform: rotate(90deg);
+    /* z-index: 1002; */
+}
+.rear .rearImg .divRed,
+.rear .rearImg .divBlue{
+    transform: rotate(-90deg);
 }
 .right{
     margin-bottom: 40px;
     order: -2;
     transform: rotate(180deg);
+    /* z-index: 1001; */
+}
+.right .rightImg .divRed,
+.right .rightImg .divBlue{
+    transform: rotate(-180deg);
 }
 .top{
     margin: 150px 0;
     transform: rotate(90deg);
+    /* z-index: 1000; */
+}
+
+.top .topImg .divRed,
+.top .topImg .divBlue{
+    transform: rotate(-90deg);
 }
 
 
 }
+
+
+
 
 /* ================================== */
 /* ================================== */
