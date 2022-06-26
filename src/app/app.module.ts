@@ -15,6 +15,7 @@ import { DemoDirective } from './directive/demo.directive';
 import { DamagesComponent } from './pages/damages/damages.component';
 import { DamagesOverviewComponent } from './pages/damages-overview/damages-overview.component';
 import { IsActiveDirective } from './directive/is-active.directive';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { IsActiveDirective } from './directive/is-active.directive';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

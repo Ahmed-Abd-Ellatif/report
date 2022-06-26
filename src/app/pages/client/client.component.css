@@ -11,6 +11,7 @@
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 12px;
+    text-transform: capitalize;
 }
 .clientInfo p:first-child{
     font-size: 28px;
