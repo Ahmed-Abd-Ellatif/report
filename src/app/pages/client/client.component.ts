@@ -13,7 +13,6 @@ dataList:any;
   ngOnInit(): void {
     this.dataSer.getData().subscribe(data=>{
       this.dataList = data;
-      console.log(this.dataList.data.id)
     })
   }
 

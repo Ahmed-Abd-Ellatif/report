@@ -6,7 +6,7 @@
 
             <!-- <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
             <!-- <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-            <div id="mapa-mapbox"></div>
+            <!-- <div id="mapa-mapbox"></div> -->
             <!-- <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
             <!-- <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
             <div class="leftRight">
@@ -21,7 +21,7 @@
                     </div>
                     <div>
                         <p>Color</p>
-                        <span>{{dataList.data.vehicle.color}}</span>
+                        <div><span>{{dataList.data.vehicle.color}}</span></div>
                     </div>
                     <div>
                         <p>Plate#</p>
@@ -54,9 +54,23 @@
                         <span>Yes</span>
                     </div>
                 </div>
+                <!-- ==================================================== -->
+                <!-- ==================================================== -->
                 <div class="right">
-                    <img src="assets/images/map.png" alt="">
+                    <div  id="mapa-mapbox"></div>
+                    <div class="mapDetails">
+                        <h3>{{dataList.data.locations.pickup.address}}</h3>
+                        <p>{{dataList.data.locations.pickup.name}}</p>
+                        <h3>{{dataList.data.locations.delivery.address}}</h3>
+                        <p>{{dataList.data.locations.delivery.name}}</p>
+                       
+                        <div><img src="assets/images/distanceIcon.png" alt="">
+                            {{dataList.data.locations.distance}} mi
+                        </div>
+                    </div>
                 </div>
+                <!-- ==================================================== -->
+                <!-- ==================================================== -->
             </div>
             <div class="counter">
                 <div>
@@ -86,3 +100,5 @@
         </div>
     </div>
 </section>
+
+
