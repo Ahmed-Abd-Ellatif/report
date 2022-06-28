@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class DataServicesService {
 
   constructor(private http:HttpClient) { }
-  url='https://api.ryets.com/dev/inspections/22AB2502-949B-4A8F-90AC-DBB8C963F83D'; //Id
+  url='https://api.ryets.com/dev/inspections/68D141AB-47BD-4384-9013-03080143C4FD'; //Id
   getData():Observable<any>{
 return this.http.get(this.url)
 

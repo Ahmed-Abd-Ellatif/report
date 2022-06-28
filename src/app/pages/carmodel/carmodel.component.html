@@ -4,6 +4,11 @@
             <h2>{{dataList.data.vehicle.year}} {{dataList.data.vehicle.make}} {{dataList.data.vehicle.model}}</h2>
             <h4>{{dataList.data.vehicle.vin}}</h4>
 
+            {{dataList | json}} 
+                {{pickupLon}} <br>
+                {{pickupLat}} <br>
+                {{deliveryLon}} <br>
+                {{deliveryLat}}
             <!-- <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
             <!-- <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
             <!-- <div id="mapa-mapbox"></div> -->
