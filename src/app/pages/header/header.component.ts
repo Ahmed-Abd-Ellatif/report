@@ -12,6 +12,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  copyUrl(){
+    
+    var url = window.location.href;
+    console.log(url)
+  }
 
 }

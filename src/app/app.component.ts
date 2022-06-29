@@ -20,16 +20,19 @@ export class AppComponent {
   //     }
   //   });
   // }
-  downloadAsPdf(){
-    html2canvas(document.getElementById('content')!).then(canvas=>{
-      const contentDataUrl = canvas.toDataURL('image/png')
-      let pdf = new jsPDF('p','mm','a4');
-      var width = pdf.internal.pageSize.getWidth();
-      var height = canvas.height * width / canvas.width;
-
-      pdf.addImage(contentDataUrl,'PNG' , 0, 0,width,height)
-      pdf.save('report.pdf');
-    })
-  }
+  // downloadAsPdf(){
+  //   html2canvas(document.getElementById('content')!).then(canvas=>{
+  //     const contentDataUrl = canvas.toDataURL('image/png')
+  //     let pdf = new jsPDF('p','mm','a4');
+  //     // var width = pdf.internal.pageSize.getWidth();
+  //     var width = window.screenX *11;
+  //     // var height = canvas.height * width / canvas.width;
+  //     var height = window.screenY *11; //250
+  //     alert(height +" "+ width)
+  //     pdf.addImage(contentDataUrl,'PNG' , 20, 0,width,height)
+  //     pdf.save('report.pdf');
+  //     // window.open(pdf.output('bloburl',{filename:'new.pdf'}),'_blank')
+  //   })
+  // }
   
 }

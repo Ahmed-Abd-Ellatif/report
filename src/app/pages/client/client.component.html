@@ -1,11 +1,12 @@
-<section class="client"  *ngIf="dataList.data.client.lenght==0">
+<section class="client">
     <div class="container">
         <div class="clientInfo">
-            <p>{{dataList.data.client.name}}</p>
-            <p>{{dataList.data.client.company}}</p>
-            <p>{{dataList.data.client.address.line1}}</p>
-            <p>{{dataList.data.client.address.state}}</p>
-            <p>{{dataList.data.client.address.country}}</p>
+            {{client | json}}
+            <p>{{client.name}}</p>
+            <p>{{client.company}}</p>
+            <p>{{client.address.line1}}</p>
+            <p>{{client.address.state}}</p>
+            <p>{{client.address.country}}</p>
             <hr>
         </div>
     </div>

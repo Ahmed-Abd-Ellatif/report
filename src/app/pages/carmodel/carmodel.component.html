@@ -1,10 +1,10 @@
 <section class="carModel">
+    {{vehicle.data|json}}
     <div class="container">
         <div class="carModelDetails">
-            <h2>{{dataList.data.vehicle.year}} {{dataList.data.vehicle.make}} {{dataList.data.vehicle.model}}</h2>
-            <h4>{{dataList.data.vehicle.vin}}</h4>
-
-            {{dataList | json}} 
+            <h2>abcd</h2>
+            <h2>{{vehicle.year}} {{vehicle.make}} {{vehicle.model}}</h2>
+            <h4>{{vehicle.vin}}</h4>
                 {{pickupLon}} <br>
                 {{pickupLat}} <br>
                 {{deliveryLon}} <br>
@@ -18,26 +18,26 @@
                 <div class="left">
                     <div>
                         <p>LOT#</p>
-                        <span>{{dataList.data.vehicle.lot}}</span>
+                        <span>{{vehicle.lot}}</span>
                     </div>
                     <div>
                         <p>Miles</p>
-                        <span>{{dataList.data.vehicle.distance}}</span>
+                        <span>{{vehicle.distance}}</span>
                     </div>
                     <div>
                         <p>Color</p>
-                        <div><span>{{dataList.data.vehicle.color}}</span></div>
+                        <div><span>{{vehicle.color}}</span></div>
                     </div>
                     <div>
                         <p>Plate#</p>
-                        <span>{{dataList.data.vehicle.plate}}</span>
+                        <span>{{vehicle.plate}}</span>
                     </div>
                     <!-- =========================================== -->
                     <div>
                         <p>Keys</p>
-                        <span  *ngIf="dataList.data.vehicle.keysCount;then thenBlock ; else elseBlock"></span>
+                        <span  *ngIf="vehicle.keysCount;then thenBlock ; else elseBlock"></span>
                         <ng-template #thenBlock>
-                            <span>{{dataList.data.vehicle.keysCount}}</span>
+                            <span>{{vehicle.keysCount}}</span>
                         </ng-template>
                         <ng-template #elseBlock>
                             <span>---</span>
@@ -49,12 +49,12 @@
                         <span>Yes</span><!--YES-->
                     </div>
                     
-                    <div *ngIf="dataList.data.vehicle.drivable">
+                    <div *ngIf="vehicle.drivable">
                         <p>Non-Drivable</p>
                         <span>Yes</span>
                     </div>
                    
-                    <div *ngIf="dataList.data.vehicle.hasMechanicalIssues">
+                    <div *ngIf="vehicle.hasMechanicalIssues">
                         <p>Mechanical Issues</p>
                         <span>Yes</span>
                     </div>
@@ -64,13 +64,13 @@
                 <div class="right">
                     <div  id="mapa-mapbox"></div>
                     <div class="mapDetails">
-                        <h3>{{dataList.data.locations.pickup.address}}</h3>
-                        <p>{{dataList.data.locations.pickup.name}}</p>
-                        <h3>{{dataList.data.locations.delivery.address}}</h3>
-                        <p>{{dataList.data.locations.delivery.name}}</p>
+                        <h3>{{locations.pickup.address}}</h3>
+                        <p>{{locations.pickup.name}}</p>
+                        <h3>{{locations.delivery.address}}</h3>
+                        <p>{{locations.delivery.name}}</p>
                        
                         <div><img src="assets/images/distanceIcon.png" alt="">
-                            {{dataList.data.locations.distance}} mi
+                            {{locations.distance}} mi
                         </div>
                     </div>
                 </div>

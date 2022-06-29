@@ -10,7 +10,8 @@ import * as Mapboxgl from 'mapbox-gl';
   styleUrls: ['./carmodel.component.css']
 })
 export class CarmodelComponent implements OnInit { 
-  dataList:any=[];
+  vehicle:any;
+  locations:any;
   pickupLon:any;
   pickupLat:any
   deliveryLon:any
@@ -23,12 +24,14 @@ export class CarmodelComponent implements OnInit {
   ngOnInit(): void{
     
      
-    this.dataSer.getData().subscribe(data=>{
-      this.dataList = data;
-      this.pickupLon =data.data.locations.pickup.lon;
-      this.pickupLat =data.data.locations.pickup.lat;
-      this.deliveryLon =data.data.locations.delivery.lon;
-      this.deliveryLat =data.data.locations.delivery.lat;
+    this.dataSer.getData().subscribe(allData=>{
+      this.vehicle = allData.data.vehicle;
+      this.locations = allData.data.locations;
+
+      this.pickupLon =allData.data.locations.pickup.lon;
+      this.pickupLat =allData.data.locations.pickup.lat;
+      this.deliveryLon =allData.data.locations.delivery.lon;
+      this.deliveryLat =allData.data.locations.delivery.lat;
     });
       
 

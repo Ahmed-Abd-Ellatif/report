@@ -9,10 +9,11 @@ import { DataServicesService } from 'src/app/services/data-services.service';
 export class ClientComponent implements OnInit {
 
   constructor(private dataSer:DataServicesService) { }
-dataList:any;
+  client:any;
   ngOnInit(): void {
-    this.dataSer.getData().subscribe(data=>{
-      this.dataList = data;
+    this.dataSer.getData().subscribe(allData=>{
+      this.client = allData.data.client;
+      console.log(this.client)
     })
   }
 
