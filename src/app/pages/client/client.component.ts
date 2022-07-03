@@ -10,8 +10,10 @@ export class ClientComponent implements OnInit {
 
   constructor(private dataSer:DataServicesService) { }
   client:any;
+  dataList:any;
   ngOnInit(): void {
     this.dataSer.getData().subscribe(allData=>{
+      // this.dataList=allData
       this.client = allData.data.client;
       console.log(this.client)
     })

@@ -43,8 +43,8 @@ export class CarmodelComponent implements OnInit {
       zoom: 6
       });
   
-      this.crearMarcador(this.pickupLon, this.pickupLat);
-      this.crearMarcador(this.deliveryLon, this.deliveryLat);
+      // this.crearMarcador(-97.7475016, 30.2642643);
+      // this.crearMarcador(-90.7475016, 33.2642643);
 
       
       this.mapa.on('load', () => {
@@ -56,8 +56,8 @@ export class CarmodelComponent implements OnInit {
         'geometry': {
         'type': 'LineString',
         'coordinates': [
-            [this.pickupLon ,this.pickupLat],
-            [this.deliveryLon, this.deliveryLat]
+            [-97.7475016, 30.2642643],
+            [-90.7475016, 33.2642643]
             ]
         
         }

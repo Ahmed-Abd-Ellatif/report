@@ -29,7 +29,7 @@ export class DocumentsComponent implements OnInit {
       image:'assets/images/downloadBlue.png',
       color:'#498205'
     },
-  ]
+  ];
   constructor() { }
 
   ngOnInit(): void {

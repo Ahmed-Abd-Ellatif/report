@@ -6,7 +6,7 @@ import { Directive, HostListener,ElementRef } from '@angular/core';
 export class IsActiveDirective {
 
   constructor(private el : ElementRef) { }
-  @HostListener('click')
+  // @HostListener('click')
 //   imageChange(){
 
 //    var icons = document.querySelectorAll('.divRed span'); //icon
@@ -21,15 +21,15 @@ export class IsActiveDirective {
 // }
 
 
-downloadAsPdf(){
-  window.onload =function(){
-    document.getElementById('download')?.addEventListener('click',()=>{
-      const allPage = document.getElementById('allPage');
-      console.log(allPage)
-      console.log('123321')
-    })
-  }
-}
+// downloadAsPdf(){
+//   window.onload =function(){
+//     document.getElementById('download')?.addEventListener('click',()=>{
+//       const allPage = document.getElementById('allPage');
+//       console.log(allPage)
+//       console.log('123321')
+//     })
+//   }
+// }
 
 }
 

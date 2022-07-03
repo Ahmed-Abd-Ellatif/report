@@ -2,13 +2,9 @@
     {{vehicle.data|json}}
     <div class="container">
         <div class="carModelDetails">
-            <h2>abcd</h2>
             <h2>{{vehicle.year}} {{vehicle.make}} {{vehicle.model}}</h2>
             <h4>{{vehicle.vin}}</h4>
-                {{pickupLon}} <br>
-                {{pickupLat}} <br>
-                {{deliveryLon}} <br>
-                {{deliveryLat}}
+                
             <!-- <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
             <!-- <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
             <!-- <div id="mapa-mapbox"></div> -->
@@ -46,7 +42,7 @@
                      <!-- =========================================== -->
                     <div>
                         <p>Car Title</p>
-                        <span>Yes</span><!--YES-->
+                        <span>Yes</span>
                     </div>
                     
                     <div *ngIf="vehicle.drivable">

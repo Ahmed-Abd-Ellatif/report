@@ -7,15 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./photos.component.css']
 })
 export class PhotosComponent implements OnInit {
-showPopup=false;
-  constructor() { 
-  }
-  openPopup(){
-    this.showPopup=true;
-  }
-  closePopup(){
-    this.showPopup=false;
-  }
+  showPopup:boolean=false;
+  constructor() { }
+
+openPopup(){
+  this.showPopup=true;
+}
+
+closePopup(){
+  this.showPopup=false;
+}
 
   ngOnInit(): void {}
 
