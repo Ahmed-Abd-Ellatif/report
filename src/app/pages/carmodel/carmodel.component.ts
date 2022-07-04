@@ -11,11 +11,28 @@ import * as Mapboxgl from 'mapbox-gl';
 })
 export class CarmodelComponent implements OnInit { 
   vehicle:any;
+  year:any;
+  model:any;
+  make:any;
+  vin:any;
+  lot:any;
+  distance:any;
+  color:any;
+  plate:any;
+  keysCount:any;
+  drivable:any;
+  hasMechanicalIssues:any;
+
   locations:any;
-  pickupLon:any;
-  pickupLat:any
-  deliveryLon:any
-  deliveryLat:any
+  pickupAddress:any;
+  pickupName:any;
+  deliveryAddress:any;
+  deliveryName:any;
+  locationsDistance:any
+  // pickupLon!:number;
+  // pickupLat!:number
+  // deliveryLon!:number
+  // deliveryLat!:number
 
   mapa!: Mapboxgl.Map;
   constructor(private dataSer:DataServicesService) {}
@@ -26,25 +43,47 @@ export class CarmodelComponent implements OnInit {
      
     this.dataSer.getData().subscribe(allData=>{
       this.vehicle = allData.data.vehicle;
+      this.year = allData.data.vehicle.year;
+      this.make = allData.data.vehicle.make;
+      this.model = allData.data.vehicle.model;
+      this.vin = allData.data.vehicle.vin;
+      this.lot = allData.data.vehicle.lot;
+      this.distance = allData.data.vehicle.distance;
+      this.color = allData.data.vehicle.color;
+      this.plate = allData.data.vehicle.plate;
+      this.keysCount = allData.data.vehicle.keysCount;
+      this.drivable = allData.data.vehicle.drivable;
+      this.hasMechanicalIssues = allData.data.vehicle.hasMechanicalIssues;
+      // -----------------------------
+      // -----------------------------
       this.locations = allData.data.locations;
+      this.pickupAddress = allData.data.locations.pickup.address;
+      this.pickupName = allData.data.locations.pickup.name;
+      this.deliveryAddress = allData.data.locations.delivery.address;
+      this.deliveryName = allData.data.locations.delivery.name;
+      this.locationsDistance = allData.data.locations.distance;
+      // ---------------------------
+      // ---------------------------
+      let pickupLon =allData.data.locations.pickup.lon;
+      let pickupLat =allData.data.locations.pickup.lat;
+      let deliveryLon =allData.data.locations.delivery.lon;
+      let deliveryLat =allData.data.locations.delivery.lat;
 
-      this.pickupLon =allData.data.locations.pickup.lon;
-      this.pickupLat =allData.data.locations.pickup.lat;
-      this.deliveryLon =allData.data.locations.delivery.lon;
-      this.deliveryLat =allData.data.locations.delivery.lat;
-    });
-      
 
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// MAP
+// <<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
       (Mapboxgl as typeof Mapboxgl).accessToken = environment.mapboxKey;
       this.mapa= new Mapboxgl.Map({
       container: 'mapa-mapbox',
       style: 'mapbox://styles/mapbox/light-v10', 
-      center: [-97.7475016, 30.2642643], 
+      center: [pickupLon, pickupLat], 
       zoom: 6
       });
   
-      // this.crearMarcador(-97.7475016, 30.2642643);
-      // this.crearMarcador(-90.7475016, 33.2642643);
+      this.crearMarcador(pickupLon, pickupLat);
+      this.crearMarcador(deliveryLon ,deliveryLat);
 
       
       this.mapa.on('load', () => {
@@ -56,8 +95,8 @@ export class CarmodelComponent implements OnInit {
         'geometry': {
         'type': 'LineString',
         'coordinates': [
-            [-97.7475016, 30.2642643],
-            [-90.7475016, 33.2642643]
+            [pickupLon, pickupLat],
+            [deliveryLon ,deliveryLat]
             ]
         
         }
@@ -73,63 +112,13 @@ export class CarmodelComponent implements OnInit {
         },
         'paint': {
         'line-color': '#0078d4',
-        'line-width': 2
+        'line-width': 1
         }
         });
       });
-
+    });
+      
     }
-
-  
-    // ngOnInit(): void {
-     
-    //   this.getAllData();
-      
-
-    //   (Mapboxgl as typeof Mapboxgl).accessToken = environment.mapboxKey;
-    //   this.mapa= new Mapboxgl.Map({
-    //   container: 'mapa-mapbox',
-    //   style: 'mapbox://styles/mapbox/light-v10', 
-    //   center: [-97.7475016, 30.2642643], 
-    //   zoom: 6
-    //   });
-  
-    //   this.crearMarcador(this.pickupLon, this.pickupLat);
-    //   this.crearMarcador(this.deliveryLon, this.deliveryLat);
-
-      
-    //   this.mapa.on('load', () => {
-    //     console.log(this.pickupLon + " gagaga")
-    //     this.mapa.addSource('route', {
-    //     'type': 'geojson',
-    //     'data': {
-    //     'type': 'Feature',
-    //     'properties': {},
-    //     'geometry': {
-    //     'type': 'LineString',
-    //     'coordinates': [
-    //         [this.pickupLon ,this.pickupLat],
-    //         [this.deliveryLon, this.deliveryLat]
-    //         ]
-        
-    //     }
-    //     }
-    //     });
-    //     this.mapa.addLayer({
-    //     'id': 'route',
-    //     'type': 'line',
-    //     'source': 'route',
-    //     'layout': {
-    //     'line-join': 'round',
-    //     'line-cap': 'round'
-    //     },
-    //     'paint': {
-    //     'line-color': '#0078d4',
-    //     'line-width': 2
-    //     }
-    //     });
-    //     });
-    // }
 
 
     crearMarcador(lng:number ,lat:number){

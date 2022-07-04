@@ -8,9 +8,11 @@ import { Observable } from 'rxjs';
 export class DataServicesService {
 
   constructor(private http:HttpClient) { }
-  url='https://api.ryets.com/dev/inspections/2373DD9C-BCEF-4787-BADD-E1C21C2B95C3';
-  getData():Observable<any>{
-return this.http.get(this.url)
+  url='https://api.ryets.com/dev/inspections/0715E614-7A39-48D5-A6DF-816DC0A6B921';
+  mapUrl="https://api.mapbox.com/directions/v5/{mapbox/driving}/{longitude},{latitude}"
 
+  getData():Observable<any>{
+    return this.http.get(this.url)
   }
+
 }

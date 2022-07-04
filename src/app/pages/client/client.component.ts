@@ -10,12 +10,19 @@ export class ClientComponent implements OnInit {
 
   constructor(private dataSer:DataServicesService) { }
   client:any;
-  dataList:any;
+  name:any;
+  company:any;
+  line1:any;
+  state:any;
+  country:any;
   ngOnInit(): void {
     this.dataSer.getData().subscribe(allData=>{
-      // this.dataList=allData
       this.client = allData.data.client;
-      console.log(this.client)
+      this.name = allData.data.client.name;
+      this.company = allData.data.client.company;
+      this.line1 = allData.data.client.address.line1;
+      this.state = allData.data.client.address.state;
+      this.country = allData.data.client.address.country;
     })
   }
 

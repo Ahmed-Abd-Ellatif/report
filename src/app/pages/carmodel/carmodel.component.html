@@ -1,10 +1,8 @@
 <section class="carModel">
-    {{vehicle.data|json}}
     <div class="container">
         <div class="carModelDetails">
-            <h2>{{vehicle.year}} {{vehicle.make}} {{vehicle.model}}</h2>
-            <h4>{{vehicle.vin}}</h4>
-                
+            <h2>{{year}} {{make}} {{model}}</h2>
+            <h4>{{vin}}</h4>
             <!-- <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
             <!-- <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
             <!-- <div id="mapa-mapbox"></div> -->
@@ -12,61 +10,110 @@
             <!-- <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
             <div class="leftRight">
                 <div class="left">
+                    <!-- ----------------LOT-------------------------------- -->
                     <div>
                         <p>LOT#</p>
-                        <span>{{vehicle.lot}}</span>
+                        <span  *ngIf="lot;then thenBlockLot ; else elseBlockLot"></span>
+                        <ng-template #thenBlockLot>
+                            <span>{{lot}}</span>
+                        </ng-template>
+                        <ng-template #elseBlockLot>
+                            <span>---</span>
+                        </ng-template>
                     </div>
+                    <!-- ---------------------------------------------------- -->
+                    <!-- ---------------------MILES-------------------------- -->
                     <div>
                         <p>Miles</p>
-                        <span>{{vehicle.distance}}</span>
+                        <span  *ngIf="distance ;then thenBlockdistance ; else elseBlockdistance"></span>
+                        <ng-template #thenBlockdistance>
+                            <span>{{distance}}</span>
+                        </ng-template>
+                        <ng-template #elseBlockdistance>
+                            <span>---</span>
+                        </ng-template>
                     </div>
+                    <!-- ----------------------------------------------------- -->
+                    <!-- ----------------------COLOR-------------------------- -->
                     <div>
                         <p>Color</p>
-                        <div><span>{{vehicle.color}}</span></div>
+                            <span  *ngIf="color;then thenBlockcolor ; else elseBlockcolor"></span>
+                            <ng-template #thenBlockcolor>
+                                <span>{{color}}</span>
+                            </ng-template>
+                            <ng-template #elseBlockcolor>
+                                <span>Grey 1</span>
+                            </ng-template>
                     </div>
+                    <!-- ----------------------------------------------------- -->
+                    <!-- -----------------------PLATE------------------------- -->
                     <div>
                         <p>Plate#</p>
-                        <span>{{vehicle.plate}}</span>
+                        <span  *ngIf="plate;then thenBlockplate ; else elseBlockplate"></span>
+                        <ng-template #thenBlockplate>
+                            <span>{{plate}}</span>
+                        </ng-template>
+                        <ng-template #elseBlockplate>
+                            <span>---</span>
+                        </ng-template>
                     </div>
+                    <!-- ------------------------------------------------------ -->
                     <!-- =========================================== -->
                     <div>
                         <p>Keys</p>
-                        <span  *ngIf="vehicle.keysCount;then thenBlock ; else elseBlock"></span>
+                        <span  *ngIf="keysCount;then thenBlock ; else elseBlock"></span>
                         <ng-template #thenBlock>
-                            <span>{{vehicle.keysCount}}</span>
+                            <span>{{keysCount}}</span>
                         </ng-template>
                         <ng-template #elseBlock>
                             <span>---</span>
                         </ng-template>
                     </div>
                      <!-- =========================================== -->
-                    <div>
+                     <!-- ---------------CAR-TITLE------------------- -->
+                    <!-- <div>
                         <p>Car Title</p>
                         <span>Yes</span>
-                    </div>
+                    </div> -->
+                    <!-- -------------------------------------------- -->
                     
-                    <div *ngIf="vehicle.drivable">
+                    <!-- -------------------Drivable----------------- -->
+                    <div>
                         <p>Non-Drivable</p>
-                        <span>Yes</span>
+                        <span  *ngIf="drivable; then thenBlockdrivable ; else elseBlockdrivable"></span>
+                        <ng-template #thenBlockdrivable>
+                            <span>Yes</span>
+                        </ng-template>
+                        <ng-template #elseBlockdrivable>
+                            <span>No</span>
+                        </ng-template>
                     </div>
-                   
-                    <div *ngIf="vehicle.hasMechanicalIssues">
+                    <!-- -------------------------------------------- -->
+                   <!-- -----------------Mechanical Issues----------- -->
+                    <div>
                         <p>Mechanical Issues</p>
-                        <span>Yes</span>
+                        <span  *ngIf="hasMechanicalIssues; then thenBlockhasMechanicalIssues ; else elseBlockhasMechanicalIssues"></span>
+                        <ng-template #thenBlockhasMechanicalIssues>
+                            <span>Yes</span>
+                        </ng-template>
+                        <ng-template #elseBlockhasMechanicalIssues>
+                            <span>No</span>
+                        </ng-template>
                     </div>
+                    <!-- --------------------------------------------- -->
                 </div>
                 <!-- ==================================================== -->
                 <!-- ==================================================== -->
                 <div class="right">
                     <div  id="mapa-mapbox"></div>
                     <div class="mapDetails">
-                        <h3>{{locations.pickup.address}}</h3>
-                        <p>{{locations.pickup.name}}</p>
-                        <h3>{{locations.delivery.address}}</h3>
-                        <p>{{locations.delivery.name}}</p>
+                        <h3>{{pickupAddress}}</h3>
+                        <p>{{pickupName}}</p>
+                        <h3>{{deliveryAddress}}</h3>
+                        <p>{{deliveryName}}</p>
                        
                         <div><img src="assets/images/distanceIcon.png" alt="">
-                            {{locations.distance}} mi
+                            {{locationsDistance}} mi
                         </div>
                     </div>
                 </div>
