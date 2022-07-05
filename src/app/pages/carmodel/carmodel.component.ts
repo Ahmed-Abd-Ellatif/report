@@ -74,17 +74,24 @@ export class CarmodelComponent implements OnInit {
 // <<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // MAP
 // <<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    
+      
+     
+// -------------------------------------------------------
       (Mapboxgl as typeof Mapboxgl).accessToken = environment.mapboxKey;
       this.mapa= new Mapboxgl.Map({
       container: 'mapa-mapbox',
       style: 'mapbox://styles/mapbox/light-v10', 
-      center: [pickupLon, pickupLat], 
-      zoom: 6
+      center: [deliveryLon ,deliveryLat], 
+      zoom: 5
       });
   
       this.crearMarcador(pickupLon, pickupLat);
       this.crearMarcador(deliveryLon ,deliveryLat);
 
+      // const dataM =`driving/{${pickupLon}, ${pickupLat}};{${deliveryLon} ,${deliveryLat}}`;
+     
       
       this.mapa.on('load', () => {
         this.mapa.addSource('route', {

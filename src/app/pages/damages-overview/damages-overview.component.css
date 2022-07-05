@@ -84,35 +84,35 @@ h2{
 
 /* ========================Images======================== */
 .images{
-    /* background-color: red; */
+    height: auto;
+    padding-bottom: 50px;
 }
-.images > div{
-    /* background-color: green; */
-    position: relative;
-   
-    
-}
+
 
 .right,.left{
     max-width:513px;
-    max-height: auto;
+    height: auto;
     margin: auto;
+    position: relative;
 }
 .front{
     max-width: 197px;
     max-height: auto;
     display: inline-block;
+    position: relative;
 }
 .top{
     max-width: 514px;
     height: auto;
     display: inline-block;
     margin: 80px 0px;
+    position: relative;
 }
 .rear{
     max-width: 182px;
     max-height: auto;
     display: inline-block;
+    position: relative;
 }
 
 img{
@@ -183,17 +183,19 @@ img{
     }
 
 /* ========================Images======================== */
+
 .images{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    
+    flex-direction: column; 
 }
+ 
 
 .front .frontImg .divRed,
 .front .frontImg .divBlue{
     transform: rotate(90deg);
+    z-index: 9999;
 }
 .front {
     margin-top: -40px;
@@ -201,9 +203,12 @@ img{
     transform: rotate(-90deg);
 }
 .left{
+    margin-top: -40px;
     order: -4;
 }
 .rear{
+    margin-top: -30px;
+    height: auto;
     order: -3;
     transform: rotate(90deg);
 }
@@ -212,7 +217,7 @@ img{
     transform: rotate(-90deg);
 }
 .right{
-    margin-bottom: 40px;
+    margin-top: -30px;
     order: -2;
     transform: rotate(180deg);
 }
@@ -221,9 +226,10 @@ img{
     transform: rotate(-180deg);
 }
 .top{
-    margin: 150px 0;
+    height: auto;
     transform: rotate(90deg);
 }
+
 
 .top .topImg .divRed,
 .top .topImg .divBlue{
@@ -239,7 +245,6 @@ img{
 /* ================================== */
 /* ================================== */
 @media(max-width:500px){
-   
     .damagesOverviewInfo{
         padding: 0 20px 30px;
     }
@@ -247,24 +252,28 @@ img{
         font-size: 20px;
         margin-bottom: 20px;
     }
+    
     .left img{
-        width: 315px;
-        height: 97px;
+        max-width: 315px;
+        max-height: 97px;
     }
     .right img{
-        width: 315px;
-        height: 97px;
+        max-width: 315px;
+        max-height: 97px;
     }
+   
     .top img{
-        height: 315px;
-        width: 688px;
+        /* width: 688px;
+        height:315px; */
     }
     .rear img{
-        width: 250px;
+        max-width: 250px;
+        max-height: 200px;
     }
+   
     .front img{
-        width: 250px;
-        height: auto;
+        max-width: 250px;
+        max-height: 200px;
     }
 
     .spanRed{
