@@ -29,6 +29,27 @@ header{
     font-size: 20px;
     font-weight: 400px;
 }
+input{
+    width: 0.1px;
+    height: 0.1px;
+   border: none;
+   background: transparent;
+   outline: none;
+}
+.left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left span{
+    margin: 0 30px;
+    font-size: 24px;
+}
+
+.left .company  {
+   width: 32px !important;
+   height: 31px !important;
+}
 @media (max-width:1000px){
     header{
         padding: 30px 30px 16px;
@@ -58,25 +79,14 @@ header{
     .container p{
         font-size: 11px;
     }
-}
-input{
-    width: 0.1px;
-    height: 0.1px;
-   border: none;
-   background: transparent;
-   outline: none;
-}
-.left{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.left span{
-    margin: 0 30px;
-    font-size: 24px;
+    .left span{
+        margin: 0 20px;
+        font-size: 18px;
+    }
+    
+    .left .company  {
+       width: 20px !important;
+       height: 20px !important;
+    }
 }
 
-.left .company  {
-   width: 32px !important;
-   height: 31px !important;
-}

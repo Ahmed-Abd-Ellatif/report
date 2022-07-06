@@ -87,6 +87,8 @@ h2{
     height: auto;
     padding-bottom: 50px;
 }
+.images > div{
+}
 
 
 .right,.left{
@@ -131,7 +133,9 @@ img{
 .dropdown-menu{
     width: 315px;
     padding: 13px;
+    
 }
+
 
 .dropdown-item img{
     margin-bottom: 14px;
@@ -175,41 +179,38 @@ img{
 }
 /* ================Media Quary=================== */
 @media(max-width:1200px){
+    
     .damagesOverview{
         padding: 0 10px;
     }
     .container{
         width: 100%;
     }
-
 /* ========================Images======================== */
-
 .images{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; 
 }
- 
-
 .front .frontImg .divRed,
 .front .frontImg .divBlue{
     transform: rotate(90deg);
-    z-index: 9999;
 }
 .front {
-    margin-top: -40px;
-    order: -5;
+    /* margin-top: -40px; */
+    order: 1;
     transform: rotate(-90deg);
+    /* z-index: 999; */
 }
 .left{
     margin-top: -40px;
-    order: -4;
+    order: 2;
 }
 .rear{
-    margin-top: -30px;
+    /* margin-top: -30px; */
     height: auto;
-    order: -3;
+    order: 3; 
     transform: rotate(90deg);
 }
 .rear .rearImg .divRed,
@@ -217,8 +218,8 @@ img{
     transform: rotate(-90deg);
 }
 .right{
-    margin-top: -30px;
-    order: -2;
+    /* margin-top: -30px; */
+    order: 4;
     transform: rotate(180deg);
 }
 .right .rightImg .divRed,
@@ -226,6 +227,7 @@ img{
     transform: rotate(-180deg);
 }
 .top{
+    order: 5;
     height: auto;
     transform: rotate(90deg);
 }

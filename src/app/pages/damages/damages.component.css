@@ -60,8 +60,9 @@
 }
 .icon{
     display: flex;
-    justify-content: center;
-    align-items: stretch;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
 }
 .icon img{
     width: 27px;
@@ -73,6 +74,8 @@
     font-size: 24px;
     color: #fff;
     font-weight: 500;
+    align-self: center;
+    margin-bottom: 0;
 }
 .damagesInfo .hr{
     background-color: #e2e2e2;

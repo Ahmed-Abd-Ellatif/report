@@ -6,9 +6,14 @@
                 <div class="info" *ngFor="let docs of documents">
                     <div>
                         <p>{{docs.name}}</p>
-                        <span [style.color]="docs.color"><img [src]="docs.icon"> {{docs.title}}</span>
+                        <span [style.color]="docs.color" (click)="openPopup(docs)"><img [src]="docs.icon"> {{docs.title}}</span>
                     </div>
                     <img [src]='docs.image' alt="">
+
+
+
+
+
                   
                 </div>
             </div>
@@ -17,3 +22,19 @@
     </div>
 </section>
 
+ <!-- ------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------ -->
+<div class="overlay" *ngIf="showPopup">
+    <div class="popup">
+        <div class="cross" (click)="closePopup()">
+            <img src="assets/images/cross.png" alt="">
+        </div>
+        <div class="title">
+            <p>{{pdf.name}}</p>
+            <span [style.color]="pdf.color" [style.background]="pdf.bgc"><img [src]="pdf.icon"> {{pdf.title}}</span>
+        </div>
+        <embed src="assets/book.pdf" type="application/pdf" width="100%" height="90%" />
+    </div>
+</div>
+<!-- ------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------ -->
