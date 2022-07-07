@@ -84,45 +84,98 @@ h2{
 
 /* ========================Images======================== */
 .images{
-    height: auto;
-    padding-bottom: 50px;
+    background-color: green;
 }
-.images > div{
+.right,.left,.top,.rear,.front{
+    position: relative;
 }
-
-
-.right,.left{
-    max-width:513px;
-    height: auto;
+/* ==============+RIGHT-==================== */
+.right{
+    width: 536px;
+    height: 160px;
+    background-color: red;
     margin: auto;
-    position: relative;
 }
-.front{
-    max-width: 197px;
-    max-height: auto;
-    display: inline-block;
-    position: relative;
-}
-.top{
-    max-width: 514px;
-    height: auto;
-    display: inline-block;
-    margin: 80px 0px;
-    position: relative;
-}
-.rear{
-    max-width: 182px;
-    max-height: auto;
-    display: inline-block;
-    position: relative;
-}
-
-img{
+.rightImg{
     width: 100%;
     height: 100%;
+    background-image: url('../../../assets/images/dam1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    
 }
+/* ================FRONT================== */
+.front{
+    width: 171px;
+    height: 250px;
+    background-color: red;
+    display: inline-block;
+    margin: 80px 0;
+}
+.frontImg{
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/images/dam2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    
+}
+/* ================TOP================== */
+.top{
+    width: 536px;
+    height: 229px;
+    background-color: red;
+    display: inline-block;
+    margin: 80px 16px;
+}
+.topImg{
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/images/dam3.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    
+}
+/* ================REAR================== */
+.rear{
+    width: 170px;
+    height: 247px;
+    background-color: red;
+    display: inline-block;
+    margin: 80px 0;
+}
+.rearImg{
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/images/dam4.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    
+}
+/* ================LEFT================== */
+.left{
+    width: 536px;
+    height: 160px;
+    background-color: red;
+    margin: auto;
+}
+.leftImg{
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/images/dam5.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    
+}
+/* ================================================ */
+/* =====================damages==================== */
+/* ================================================ */
 
-/* <<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>> */
 .divRed ,.divBlue{
     position: absolute;
     
@@ -135,9 +188,9 @@ img{
     padding: 13px;
     
 }
-
-
 .dropdown-item img{
+    width: 100%;
+    height: 100%;
     margin-bottom: 14px;
 }
 .spanRed{
@@ -177,76 +230,96 @@ img{
     border: 1px solid #0078d4;
     color: #fff;
 }
-/* ================Media Quary=================== */
-@media(max-width:1200px){
-    
-    .damagesOverview{
-        padding: 0 10px;
+
+/* ================================================== */
+/* ====================Media========================= */
+/* ================================================== */
+@media (max-width:1200px){
+    .images{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .container{
         width: 100%;
     }
-/* ========================Images======================== */
-.images{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
-}
-.front .frontImg .divRed,
-.front .frontImg .divBlue{
-    transform: rotate(90deg);
-}
-.front {
-    /* margin-top: -40px; */
-    order: 1;
-    transform: rotate(-90deg);
-    /* z-index: 999; */
-}
-.left{
-    margin-top: -40px;
-    order: 2;
-}
-.rear{
-    /* margin-top: -30px; */
-    height: auto;
-    order: 3; 
-    transform: rotate(90deg);
-}
-.rear .rearImg .divRed,
-.rear .rearImg .divBlue{
-    transform: rotate(-90deg);
-}
-.right{
-    /* margin-top: -30px; */
-    order: 4;
-    transform: rotate(180deg);
-}
-.right .rightImg .divRed,
-.right .rightImg .divBlue{
-    transform: rotate(-180deg);
-}
-.top{
-    order: 5;
-    height: auto;
-    transform: rotate(90deg);
+    .right{
+        width: 315px;
+        height: 97px;
+        margin: auto;
+        margin-bottom: 40px;
+        order: 4;
+    }
+    .rightImg{
+        background-image: url('../../../assets/images/rightMob.png');
+    }
+    /* ================FRONT================== */
+    .front{
+        width: 315px;
+        height: 140px;
+        margin: auto;
+        margin-bottom: 40px;
+        order: 1;
+    }
+    .frontImg{
+        background-image: url('../../../assets/images/FrontMob.png');
+        
+    }
+    /* ================TOP================== */
+    .top{
+        width: 315px;
+        height: 688px;
+        margin: auto;
+        order: 5;
+    }
+    .topImg{
+        background-image: url('../../../assets/images/TopMob.png');
+        
+    }
+    /* ================REAR================== */
+    .rear{
+        width: 315px;
+        height: 148px;
+        margin: auto;
+        margin-bottom: 40px;
+        order: 3;
+        
+    }
+    .rearImg{
+        background-image: url('../../../assets/images/RearMob.png');
+        
+    }
+    /* ================LEFT================== */
+    .left{
+        width: 315px;
+        height: 97px;
+        margin: auto;
+        margin-bottom: 40px;
+        order: 2;
+    }
+    .leftImg{
+        background-image: url('../../../assets/images/LeftMob.png');
+        
+    }
+    .dropdown-menu{
+        width: 200px;
+        height: auto;
+        padding: 0;
+        
+    }
+    .dropdown-item img{
+        margin-bottom: 12px;
+        padding: 0;
+    }
+    .dropdown-item p{
+        font-size: 14px;
+        margin-bottom: 0;
+    }
 }
 
-
-.top .topImg .divRed,
-.top .topImg .divBlue{
-    transform: rotate(-90deg);
-}
-
-
-}
-
-
-
-
-/* ================================== */
-/* ================================== */
-@media(max-width:500px){
+@media (max-width:500px){
     .damagesOverviewInfo{
         padding: 0 20px 30px;
     }
@@ -254,30 +327,6 @@ img{
         font-size: 20px;
         margin-bottom: 20px;
     }
-    
-    .left img{
-        max-width: 315px;
-        max-height: 97px;
-    }
-    .right img{
-        max-width: 315px;
-        max-height: 97px;
-    }
-   
-    .top img{
-        /* width: 688px;
-        height:315px; */
-    }
-    .rear img{
-        max-width: 250px;
-        max-height: 200px;
-    }
-   
-    .front img{
-        max-width: 250px;
-        max-height: 200px;
-    }
-
     .spanRed{
         width: 16px;
         height: 16px;
