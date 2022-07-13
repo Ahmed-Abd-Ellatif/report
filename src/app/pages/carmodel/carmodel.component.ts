@@ -33,6 +33,9 @@ export class CarmodelComponent implements OnInit {
   // pickupLat!:number
   // deliveryLon!:number
   // deliveryLat!:number
+  notes:any;
+  photos:any;
+  documents:any;
 
   mapa!: Mapboxgl.Map;
   constructor(private dataSer:DataServicesService) {}
@@ -69,13 +72,19 @@ export class CarmodelComponent implements OnInit {
       let deliveryLon =allData.data.locations.delivery.lon;
       let deliveryLat =allData.data.locations.delivery.lat;
 
+      // --------------------------
+      // --------------------------
+      this.notes = allData.data.notes.length;
+      this.photos = allData.data.notes.length;
+      this.documents = allData.data.notes.length;
+
 
 
 // <<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // MAP
 // <<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-    
+//https://api.mapbox.com/directions/v5/mapbox/driving/-122.42,37.78;-77.03,38.91?access_token=pk.eyJ1Ijoib21hcmJla2hldCIsImEiOiJja2h2dDQ0Y3AweG9sMnJwNWtlMXdmdW9xIn0.tUd0IgkE3QM_IdoeZqG25w
       
      
 // -------------------------------------------------------
